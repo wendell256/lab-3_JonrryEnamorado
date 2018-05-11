@@ -45,6 +45,11 @@ public class Personajes_Aliados extends Personajes {
         this.raza = raza;
     }
 
+    @Override
+    public String toString() {
+        return "Personajes_Aliados{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + ", edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight  + ", piel=" + piel + ", pelo=" + pelo + ", raza=" + raza + '}';
+    }
+
 
 
     
