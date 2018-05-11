@@ -17,6 +17,14 @@ public class Personajes_Aliados {
     protected int crit;
     protected int luck;
     protected int vel;
+    protected String shout;
+    protected int edad;
+    protected String name;
+    protected int height;
+    protected int weight;
+    protected String piel;
+    protected String pelo;
+    protected String raza;
 
     public Personajes_Aliados() {
     }
