@@ -9,8 +9,7 @@ package lab3_jonrryenamorado;
  *
  * @author wende
  */
-public class Personajes_Aliados extends Personajes {
-
+public class Personajes {
     protected int hp;
     protected int ap;
     protected int ad;
@@ -27,11 +26,7 @@ public class Personajes_Aliados extends Personajes {
     protected String pelo;
     protected String raza;
 
-    public Personajes_Aliados() {
-        super();
-    }
-
-    public Personajes_Aliados(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
+    public Personajes(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
         this.hp = hp;
         this.ap = ap;
         this.ad = ad;
@@ -171,7 +166,8 @@ public class Personajes_Aliados extends Personajes {
 
     @Override
     public String toString() {
-        return "Personajes_Aliados{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + ", edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight + ", piel=" + piel + ", pelo=" + pelo + ", raza=" + raza + '}';
+        return "Personajes{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + ", edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight + ", piel=" + piel + ", pelo=" + pelo + ", raza=" + raza + '}';
     }
+    
     
 }

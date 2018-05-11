@@ -29,7 +29,7 @@ public class Lab3_JonrryEnamorado {
         int opc = readInt.nextInt();*/
         
         Personajes_Aliados pa = new Personajes_Aliados();
-        
+        pa = new Mago();
         
     }
     
