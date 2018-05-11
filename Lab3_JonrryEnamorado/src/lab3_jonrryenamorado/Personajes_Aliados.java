@@ -10,14 +10,14 @@ package lab3_jonrryenamorado;
  * @author wende
  */
 public class Personajes_Aliados {
-    protected int hp; 
+    /*protected int hp; 
     protected int ap; 
     protected int ad; 
     protected int eficacia; 
     protected int crit;
     protected int luck;
     protected int vel;
-    protected String shout;
+    protected String shout;*/
     protected int edad;
     protected String name;
     protected int height;
@@ -29,76 +29,81 @@ public class Personajes_Aliados {
     public Personajes_Aliados() {
     }
 
-    public Personajes_Aliados(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel) {
-        this.hp = hp;
-        this.ap = ap;
-        this.ad = ad;
-        this.eficacia = eficacia;
-        this.crit = crit;
-        this.luck = luck;
-        this.vel = vel;
+    public Personajes_Aliados(int edad, String name, int height, int weight, String piel, String pelo, String raza) {
+        this.edad = edad;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.piel = piel;
+        this.pelo = pelo;
+        this.raza = raza;
     }
 
-    public int getHp() {
-        return hp;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
-    public int getAp() {
-        return ap;
+    public String getName() {
+        return name;
     }
 
-    public void setAp(int ap) {
-        this.ap = ap;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getAd() {
-        return ad;
+    public int getHeight() {
+        return height;
     }
 
-    public void setAd(int ad) {
-        this.ad = ad;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    public int getEficacia() {
-        return eficacia;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setEficacia(int eficacia) {
-        this.eficacia = eficacia;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public int getCrit() {
-        return crit;
+    public String getPiel() {
+        return piel;
     }
 
-    public void setCrit(int crit) {
-        this.crit = crit;
+    public void setPiel(String piel) {
+        this.piel = piel;
     }
 
-    public int getLuck() {
-        return luck;
+    public String getPelo() {
+        return pelo;
     }
 
-    public void setLuck(int luck) {
-        this.luck = luck;
+    public void setPelo(String pelo) {
+        this.pelo = pelo;
     }
 
-    public int getVel() {
-        return vel;
+    public String getRaza() {
+        return raza;
     }
 
-    public void setVel(int vel) {
-        this.vel = vel;
+    public void setRaza(String raza) {
+        this.raza = raza;
     }
 
     @Override
     public String toString() {
-        return "Personajes_Aliados{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + '}';
+        return "Personajes_Aliados{" + "edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight + ", piel=" + piel + ", pelo=" + pelo + ", raza=" + raza + '}';
     }
+    
+    
+   
+
+    
     
     
     
