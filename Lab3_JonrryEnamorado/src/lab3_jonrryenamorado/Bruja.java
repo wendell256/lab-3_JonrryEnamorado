@@ -21,19 +21,9 @@ public class Bruja extends Personajes_Enemigos {
 
     public Bruja(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
         super(hp, ap, ad, eficacia, 1, 0, vel, "Estoy vieja", edad, "Bruja", 10, 15); 
-        this.setHp(1 + r.nextInt(80));
-        while(this.getHp()<60 || this.getHp()>80){
-        this.setHp(1 + r.nextInt(80)); 
-        }
+        this.setHp(60 + r.nextInt(80));
         this.setAp(20+r.nextInt(40));
-        while(this.getAp()<20 || this.getAp()>40){
-        this.setAp(1 + r.nextInt(40)); 
-        }
         this.setAd(5+r.nextInt(10));
-        while(this.getAd()<5 || this.getAd()>10){
-        this.setAp(1 + r.nextInt(10)); 
-        }
-        
         this.setEficacia(10+r.nextInt(30));
         this.setVel(r.nextInt(2)+7);
 
