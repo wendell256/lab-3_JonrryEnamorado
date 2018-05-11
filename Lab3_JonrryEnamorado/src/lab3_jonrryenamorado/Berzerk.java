@@ -9,7 +9,7 @@ package lab3_jonrryenamorado;
  *
  * @author wende
  */
-public class Mago extends Personajes_Aliados {
+public class Berzerk extends Personajes_Aliados{
     private int hp; 
     private int ap; 
     private int ad; 
@@ -19,11 +19,11 @@ public class Mago extends Personajes_Aliados {
     private int vel;
     private String shout;
 
-    public Mago() {
+    public Berzerk() {
     super ();
     }
 
-    public Mago(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
+    public Berzerk(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
         super(edad, name, height, weight, piel, pelo, raza);
         this.hp = hp;
         this.ap = ap;
@@ -101,12 +101,10 @@ public class Mago extends Personajes_Aliados {
 
     @Override
     public String toString() {
-        return "Mago{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + '}';
+        return "Berzerk{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + '}';
     }
     
     
-
-   
     
     
 }
