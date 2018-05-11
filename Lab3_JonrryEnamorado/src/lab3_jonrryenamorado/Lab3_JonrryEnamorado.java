@@ -5,6 +5,7 @@
  */
 package lab3_jonrryenamorado;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,11 +17,14 @@ public class Lab3_JonrryEnamorado {
     /**
      * @param args the command line arguments
      */
+    static int turno = 0;
     static Scanner readInt = new Scanner(System.in);
     static Scanner readStr = new Scanner(System.in);
     static int d1 = 0;
     static String s1 = "";
-
+    static int mapa = 50;
+    static int enemigos = 5;
+    static Random r = new Random();
     public static void main(String[] args) {
         // TODO code application logic here
         int dato;
@@ -85,11 +89,11 @@ public class Lab3_JonrryEnamorado {
                 System.out.println("3) Rubio");
                 System.out.println("Ingrese una opcion");
                 dato = readInt.nextInt();
-                switch(dato){
+                switch (dato) {
                     case 1:
                         player.setPelo("Negro");
                         break;
-                    case 2: 
+                    case 2:
                         player.setPelo("Cafe");
                         break;
                     case 3:
@@ -102,11 +106,11 @@ public class Lab3_JonrryEnamorado {
                 System.out.println("3) Rubio");
                 System.out.println("Ingrese una opcion");
                 dato = readInt.nextInt();
-                switch(dato){
+                switch (dato) {
                     case 1:
                         player.setPiel("Negro");
                         break;
-                    case 2: 
+                    case 2:
                         player.setPiel("Cafe");
                         break;
                     case 3:
@@ -119,7 +123,7 @@ public class Lab3_JonrryEnamorado {
                 System.out.println("3) Humanos");
                 System.out.println("4) Enanos");
                 dato = readInt.nextInt();
-                switch(dato){
+                switch (dato) {
                     case 1:
                         player.setRaza("Hobbit");
                         break;
@@ -133,9 +137,78 @@ public class Lab3_JonrryEnamorado {
                         player.setRaza("Enano");
                         break;
                 }//raza
+                System.out.println("EMPIEZA PARTIDA");
+                System.out.println("*TIRA DADO*");
+                int dado1 = 1+r.nextInt(20);
+                System.out.println("Dado = "+ dado1);
+                int dadopartida = 1+r.nextInt(100);
+                if(dadopartida < player.getLuck()){
+                    System.out.println("HA ENCONTRADO UN OBJETO");
+                }
+                else if( dadopartida >=95){
+                    System.out.println("El calabozo sigue Oscuro pero las criaturas estan cerca...");
+                }
+                else{
+                    if(enemigos!=0){
+                        
+                    int en = 1+r.nextInt(enemigos);
+                    Personajes_Enemigos actual = new Personajes_Enemigos();
+                    int verenemigo = 1+r.nextInt(4);
+                    switch(verenemigo){
+                        case 1:
+                            actual = new Bruja();
+                            break;
+                        case 2:
+                            actual = new Troll();
+                            break;
+                        case 3:
+                            actual = new Orco();
+                            break;
+                        case 4:
+                            actual = new Elfo_Oscuro();
+                    }
+                        System.out.println("TE HAS ENCONTRADO CON CRIATURA " + actual.getName());
+                        if(player.getVel()<actual.getVel() || player.getVel() == actual.getVel()){
+                            turno = 0;
+                        }
+                        else{
+                            turno = 1;
+                            
+                        }
+                        switch (turno){
+                            case 0:
+                                System.out.println("Ataca " + actual.getName());
+                                
+                        }
+                        
+                        
+                    }
+                }
+                    mapa -= dado1;
+                break;
 
+            case 2:
+                System.out.println("Dificultad");
+                System.out.println("1) Easy");
+                System.out.println("2) Kinda Hard");
+                System.out.println("3) Survivor");
+                System.out.println("Seleccione una opcion:");
+                int opc3 = readInt.nextInt();
+                switch (opc3) {
+                    case 1:
+                        mapa = 50;
+                        enemigos = 5;
+                        break;
+                    case 2:
+                        mapa = 100;
+                        enemigos = 10;
+                        break;
+                    case 3:
+                        mapa = 120;
+                        enemigos = 15;
+                        break;
+                }
         }//MENU PRINCIPAL
-        System.out.println(player);
 
     }//MAIN
 
