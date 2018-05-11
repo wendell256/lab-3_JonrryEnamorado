@@ -19,7 +19,7 @@ public class Troll extends Personajes_Enemigos {
     }
 
     public Troll(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight) {
-        super(hp, ap, 0, eficacia, crit, luck, 10, shout, edad, "Troll", 13, 65);
+        super(hp, ap, 0, eficacia, crit, 0, 10, shout, edad, "Troll", 13, 65);
         this.setHp(50 + r.nextInt(80));       
         this.setAd(30+r.nextInt(50));
         this.setEficacia(50+r.nextInt(65));
