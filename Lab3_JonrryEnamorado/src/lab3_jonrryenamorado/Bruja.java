@@ -14,7 +14,7 @@ import java.util.Random;
 public class Bruja extends Personajes_Enemigos {
 
 
-    Random r = new Random();
+   private Random r = new Random();
     public Bruja() {
         super();
     }
@@ -29,4 +29,8 @@ public class Bruja extends Personajes_Enemigos {
 
         
     }
+    
+    
+
+    
 }

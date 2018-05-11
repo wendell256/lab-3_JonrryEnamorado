@@ -18,7 +18,8 @@ public class Lab3_JonrryEnamorado {
      */
     static Scanner readInt = new Scanner(System.in);
     static Scanner readStr = new Scanner(System.in);
-    
+    static int d1 = 0;
+    static String s1 = "";
     public static void main(String[] args) {
         // TODO code application logic here
         /*System.out.println("DEV & DUNGEON");
@@ -27,11 +28,8 @@ public class Lab3_JonrryEnamorado {
         System.out.println("3) Salir");
         System.out.println("Seleccione una opción: ");
         int opc = readInt.nextInt();*/
-        
-        Personajes pa = new Personajes();
-        pa = new Personajes_Aliados();
-        pa = new Mago();
-        
+        Personajes pe = new Mago(d1,d1,d1,d1,d1,d1,d1,s1,d1,s1,d1,d1,s1,s1,s1);
+        System.out.println(pe);
     }
     
 }
