@@ -22,11 +22,14 @@ public class Personajes {
     protected String name;
     protected int height;
     protected int weight;
-    protected String piel;
-    protected String pelo;
-    protected String raza;
+    
 
-    public Personajes(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
+    public Personajes() {
+    }
+    
+    
+
+    public Personajes(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight) {
         this.hp = hp;
         this.ap = ap;
         this.ad = ad;
@@ -39,9 +42,6 @@ public class Personajes {
         this.name = name;
         this.height = height;
         this.weight = weight;
-        this.piel = piel;
-        this.pelo = pelo;
-        this.raza = raza;
     }
 
     public int getHp() {
@@ -140,34 +140,13 @@ public class Personajes {
         this.weight = weight;
     }
 
-    public String getPiel() {
-        return piel;
-    }
-
-    public void setPiel(String piel) {
-        this.piel = piel;
-    }
-
-    public String getPelo() {
-        return pelo;
-    }
-
-    public void setPelo(String pelo) {
-        this.pelo = pelo;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
-    }
-
     @Override
     public String toString() {
-        return "Personajes{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + ", edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight + ", piel=" + piel + ", pelo=" + pelo + ", raza=" + raza + '}';
+        return "Personajes{" + "hp=" + hp + ", ap=" + ap + ", ad=" + ad + ", eficacia=" + eficacia + ", crit=" + crit + ", luck=" + luck + ", vel=" + vel + ", shout=" + shout + ", edad=" + edad + ", name=" + name + ", height=" + height + ", weight=" + weight + '}';
     }
+
+
+    
     
     
 }

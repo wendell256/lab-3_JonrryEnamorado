@@ -28,7 +28,8 @@ public class Lab3_JonrryEnamorado {
         System.out.println("Seleccione una opción: ");
         int opc = readInt.nextInt();*/
         
-        Personajes_Aliados pa = new Personajes_Aliados();
+        Personajes pa = new Personajes();
+        pa = new Personajes_Aliados();
         pa = new Mago();
         
     }
