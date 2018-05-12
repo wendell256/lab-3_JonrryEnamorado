@@ -17,6 +17,7 @@ public class Lab3_JonrryEnamorado {
     /**
      * @param args the command line arguments
      */
+    static String cont = "";
     static int turno = 0;
     static Scanner readInt = new Scanner(System.in);
     static Scanner readStr = new Scanner(System.in);
@@ -25,6 +26,7 @@ public class Lab3_JonrryEnamorado {
     static int mapa = 50;
     static int enemigos = 5;
     static Random r = new Random();
+
     public static void main(String[] args) {
         // TODO code application logic here
         int dato;
@@ -138,53 +140,105 @@ public class Lab3_JonrryEnamorado {
                         break;
                 }//raza
                 System.out.println("EMPIEZA PARTIDA");
-                System.out.println("*TIRA DADO*");
-                int dado1 = 1+r.nextInt(20);
-                System.out.println("Dado = "+ dado1);
-                int dadopartida = 1+r.nextInt(100);
-                if(dadopartida < player.getLuck()){
-                    System.out.println("HA ENCONTRADO UN OBJETO");
-                }
-                else if( dadopartida >=95){
-                    System.out.println("El calabozo sigue Oscuro pero las criaturas estan cerca...");
-                }
-                else{
-                    if(enemigos!=0){
-                        
-                    int en = 1+r.nextInt(enemigos);
-                    Personajes_Enemigos actual = new Personajes_Enemigos();
-                    int verenemigo = 1+r.nextInt(4);
-                    switch(verenemigo){
-                        case 1:
-                            actual = new Bruja();
-                            break;
-                        case 2:
-                            actual = new Troll();
-                            break;
-                        case 3:
-                            actual = new Orco();
-                            break;
-                        case 4:
-                            actual = new Elfo_Oscuro();
+                while (player.getHp() > 0 && mapa > 0) {
+                    System.out.println("*TIRA DADO*");
+                    int dado1 = 1 + r.nextInt(20);
+                    System.out.println("Dado = " + dado1);
+                    int dadopartida = 1 + r.nextInt(100);
+                    if (dadopartida < player.getLuck()) {
+                        System.out.println("HA ENCONTRADO UN OBJETO");
+                    } else if (dadopartida >= 95) {
+                        System.out.println("El calabozo sigue Oscuro pero las criaturas estan cerca...");
+                    } else {
+                        if (enemigos != 0) {
+
+                            Personajes_Enemigos actual = new Bruja(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+
+                            int verenemigo = 1 + r.nextInt(4);
+                            switch (verenemigo) {
+                                case 1:
+                                    actual = new Bruja(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+                                    break;
+                                case 2:
+                                    actual = new Troll(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+                                    break;
+                                case 3:
+                                    actual = new Orco(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+                                    break;
+                                case 4:
+                                    actual = new Elfo_Oscuro(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+                                    break;
+                                default:
+                                    actual = new Bruja(d1, d1, d1, d1, d1, d1, d1, s1, d1, s1, d1, d1);
+                            }
+                            System.out.println("TE HAS ENCONTRADO CON CRIATURA " + actual.getName());
+                            if (player.getVel() < actual.getVel() || player.getVel() == actual.getVel()) {
+                                turno = 0;
+                            } else {
+                                turno = 1;
+
+                            }
+                            System.out.println(actual.getHp());
+                            System.out.println(player.getHp());
+                            while (player.getHp() > 0 && actual.getHp() > 0) {
+                                switch (turno) {
+                                    case 0:
+                                        System.out.println("Presione una tecla para continuar");
+                                        readStr.nextLine();
+                                        System.out.println(actual.getShout());
+                                        System.out.println("Ataca " + actual.getName());
+                                        if (eficacia(actual.getEficacia())) {
+                                            int atene = actual.getAd() + actual.getAp();
+                                            System.out.println("Ataque efectivo");
+                                            if (critico(actual.getCrit())) {
+                                                System.out.println("ATAQUE CRITICO");
+                                                atene *= 2;
+
+                                            }
+                                            System.out.println("Daño = " + atene);
+                                            player.setHp(player.getHp() - atene);
+                                        } else {
+                                            System.out.println("Ataque no efectivo");
+                                        }
+                                        turno = 1;
+                                        break;
+                                    case 1:
+                                        System.out.println("Presione una tecla para continuar");
+                                        readStr.nextLine();
+                                        System.out.println(player.getShout());
+                                        System.out.println("Ataca " + player.getName());
+                                        if (eficacia(player.getEficacia())) {
+                                            int atyou = player.getAd() + player.getAp();
+                                            System.out.println("Ataque efectivo");
+                                            if (critico(player.getCrit())) {
+                                                System.out.println("ATAQUE CRITICO");
+                                                atyou *= 2;
+                                            }
+                                            System.out.println("Daño = " + atyou);
+                                            actual.setHp(actual.getHp() - atyou);
+                                        } else {
+                                            System.out.println("Ataque no efectivo");
+                                        }
+                                        turno = 0;
+                                        break;
+
+                                }
+                                System.out.println("HP " + actual.getName() + " = " + actual.getHp());
+                                System.out.println("HP " + player.getName() + " = " + player.getHp());
+                            }
+                            enemigos -= 1;
+                        } else {
+                            System.out.println("Parece que las criaturas se han fugado...");
+                        }
                     }
-                        System.out.println("TE HAS ENCONTRADO CON CRIATURA " + actual.getName());
-                        if(player.getVel()<actual.getVel() || player.getVel() == actual.getVel()){
-                            turno = 0;
-                        }
-                        else{
-                            turno = 1;
-                            
-                        }
-                        switch (turno){
-                            case 0:
-                                System.out.println("Ataca " + actual.getName());
-                                
-                        }
-                        
-                        
-                    }
-                }
                     mapa -= dado1;
+                }
+                if (mapa < 0) {
+                    System.out.println("FELICIDADES TERMINASTE EL CALABOZO");
+
+                } else if (player.getHp() < 0) {
+                    System.out.println("HAS MUERTO");
+                }
                 break;
 
             case 2:
@@ -212,4 +266,22 @@ public class Lab3_JonrryEnamorado {
 
     }//MAIN
 
+    static boolean eficacia(int l) {
+        int dado = 1 + r.nextInt(100);
+
+        if (dado < l) {
+            return true;
+        }
+        return false;
+    }
+
+    static boolean critico(int l) {
+        int dado = 1 + r.nextInt(100);
+
+        if (dado < l) {
+            return true;
+        }
+        return false;
+
+    }
 }//CLASS

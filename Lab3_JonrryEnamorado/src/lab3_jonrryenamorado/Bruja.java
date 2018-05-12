@@ -15,11 +15,9 @@ public class Bruja extends Personajes_Enemigos {
 
 
    private Random r = new Random();
-    public Bruja() {
-        super();
-    }
+    
 
-    public Bruja(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
+    public Bruja(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight) {
         super(hp, ap, ad, eficacia, 1, 0, vel, "Estoy vieja", edad, "Bruja", 10, 15); 
         this.setHp(60 + r.nextInt(80));
         this.setAp(20+r.nextInt(40));

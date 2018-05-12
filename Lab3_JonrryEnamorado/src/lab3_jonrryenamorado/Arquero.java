@@ -16,7 +16,7 @@ public class Arquero extends Personajes_Aliados{
     }
 
     public Arquero(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight, String piel, String pelo, String raza) {
-        super(150, 0, 50, 85, 60, 20, 15, "Die", edad, name, height, weight, piel, pelo, raza);
+        super(150, 0, 50, 85, 60, 20, 15, "Die die pew pew", edad, name, height, weight, piel, pelo, raza);
     }
 
    

@@ -14,12 +14,10 @@ import java.util.Random;
 public class Orco extends Personajes_Enemigos{
     Random r = new Random();
 
-    public Orco() {
-    super();
-    }
+    
 
     public Orco(int hp, int ap, int ad, int eficacia, int crit, int luck, int vel, String shout, int edad, String name, int height, int weight) {
-        super(hp, 0, ad, eficacia, crit, 0, 20, shout, edad, "Orco", 15, 250);
+        super(hp, 0, ad, eficacia, crit, 0, 20, "ORC SMASH", edad, "Orco", 15, 250);
         this.setHp(70 + r.nextInt(90));       
         this.setAd(30+r.nextInt(45));
         this.setEficacia(20+r.nextInt(50));
